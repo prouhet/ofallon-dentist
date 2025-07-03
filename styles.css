@@ -312,8 +312,7 @@ nav ul li a.active {
   color: var(--light-text);
   padding: 12px 15px;
   text-align: left;
-  position: sticky;
-  top: 50px;
+  position: static;
   z-index: 10;
 }
 
