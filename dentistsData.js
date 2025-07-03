@@ -182,7 +182,7 @@ const dentistsData = [
     address: "1490 North Greenmount Road, Suite A, O'Fallon, IL 62269",
     phone: "(618) 622-9720",
     website: "https://greenmountfamilydentistry.com/",
-    logo: "images/logos/greenmountfamily.svg",
+    logo: "images/logos/greenmountfamily.webp",
     isPremium: false,
     acceptsCareCredit: true,
     hasInHousePlan: false,
