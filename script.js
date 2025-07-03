@@ -376,7 +376,7 @@ function populateFAQSection() {
         return;
     }
     
-    if (!window.faqData) {
+    if (!faqData) {
         console.log('ERROR: faqData not found');
         return;
     }
@@ -387,7 +387,7 @@ function populateFAQSection() {
     faqContainer.innerHTML = '';
     
     // Add FAQ items
-    window.faqData.forEach(function(faq, index) {
+    faqData.forEach(function(faq, index) {
         console.log('Adding FAQ item:', index + 1);
         
         const faqItem = document.createElement('div');
