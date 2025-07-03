@@ -313,7 +313,7 @@ nav ul li a.active {
   padding: 12px 15px;
   text-align: left;
   position: sticky;
-  top: 100px;
+  top: 50px;
   z-index: 10;
 }
 
