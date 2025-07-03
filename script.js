@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('FAQ Debug:');
+    console.log('faqData exists:', typeof faqData !== 'undefined');
+    console.log('faqData length:', faqData ? faqData.length : 'undefined');
+    console.log('FAQ container exists:', !!document.querySelector('.faq-container'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Initialize the site functionality
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
