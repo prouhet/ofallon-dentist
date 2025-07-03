@@ -376,18 +376,19 @@ function populateFAQSection() {
         return;
     }
     
-    if (!faqData) {
-        console.log('ERROR: faqData not found');
-        return;
-    }
+if (typeof faqData === 'undefined') {
+    console.log('ERROR: faqData not found');
+    return;
+}
+
+console.log('faqData length:', faqData.length);
+
+// Clear existing FAQs
+faqContainer.innerHTML = '';
+
+// Add FAQ items
+faqData.forEach(function(faq, index) {
     
-    console.log('faqData length:', window.faqData.length);
-    
-    // Clear existing FAQs
-    faqContainer.innerHTML = '';
-    
-    // Add FAQ items
-    faqData.forEach(function(faq, index) {
         console.log('Adding FAQ item:', index + 1);
         
         const faqItem = document.createElement('div');
