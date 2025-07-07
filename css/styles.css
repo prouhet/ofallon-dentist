@@ -1,4 +1,4 @@
-/* Profile Cards - Fixed to match ofallongyms.com exactly */
+/* Complete Profile Card Styling - Makes it look exactly like ofallongyms.com */
 
 /* Profiles Grid Container */
 .profiles-grid {
@@ -18,6 +18,8 @@
   transition: all 0.3s ease;
   border: 1px solid #e9ecef;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-card:hover {
@@ -61,6 +63,10 @@
   display: block;
 }
 
+.profile-title {
+  text-align: center;
+}
+
 .profile-title h3 {
   font-size: 1.4rem;
   margin: 0 0 0.5rem 0;
@@ -74,6 +80,7 @@
   opacity: 0.9;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 
 /* Premium Badge */
@@ -92,6 +99,7 @@
 /* Profile Body */
 .profile-body {
   padding: 1.5rem;
+  flex-grow: 1;
 }
 
 .profile-info {
@@ -166,6 +174,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .profile-rating {
@@ -195,7 +204,7 @@
 .profile-link a {
   display: inline-block;
   background: #0078bf;
-  color: white;
+  color: white !important;
   padding: 0.7rem 1.4rem;
   border-radius: 6px;
   text-decoration: none;
@@ -209,7 +218,7 @@
   background: #005a8b;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 120, 191, 0.3);
-  color: white;
+  color: white !important;
 }
 
 .profile-card.premium-card .profile-link a {
@@ -219,9 +228,10 @@
 .profile-card.premium-card .profile-link a:hover {
   background: #7c3aed;
   box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  color: white !important;
 }
 
-/* Comparison Table Styles */
+/* Comparison Table Styling (to match) */
 .comparison-container {
   overflow-x: auto;
   background: #ffffff;
@@ -257,7 +267,7 @@
   background: #f8f9fa;
 }
 
-/* Dentist Name Cell */
+/* Dentist Name Cell in Table */
 .dentist-name {
   display: flex;
   align-items: center;
@@ -280,7 +290,7 @@
   white-space: nowrap;
 }
 
-/* Rating Styles */
+/* Rating Styles in Table */
 .rating {
   display: flex;
   align-items: center;
@@ -337,10 +347,11 @@
 @media (max-width: 480px) {
   .profiles-grid {
     gap: 1rem;
+    margin-top: 1rem;
   }
   
   .profile-card {
-    margin: 0 -0.5rem;
+    margin: 0;
   }
   
   .profile-header {
@@ -353,10 +364,5 @@
   
   .profile-footer {
     padding: 1rem;
-  }
-  
-  .comparison-container {
-    margin: 1rem -1rem 0 -1rem;
-    border-radius: 0;
   }
 }
