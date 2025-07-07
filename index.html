@@ -3,194 +3,803 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete O'Fallon Dentist Guide - Compare All 17 Practices. See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.">
-    <meta name="keywords" content="O'Fallon dentists, dental care, family dentist, cosmetic dentistry, pediatric dentist, O'Fallon IL, dental comparison, dental practices">
-    <meta name="theme-color" content="#0078bf">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Complete O'Fallon Dentist Guide - Compare All 17 Practices</title>
+    <meta name="description" content="See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.">
     
-    <title>O'Fallon Dentists - Compare All 17 Practices | Prices, Services & Reviews</title>
-    
-    <!-- Open Graph Tags for Social Sharing -->
-    <meta property="og:title" content="Complete O'Fallon Dentist Guide - Compare All 17 Practices">
-    <meta property="og:description" content="See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ofallondentists.com">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Leaflet CSS for Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    
-    <!-- CSS Files -->
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/map-styles.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --premium-color: #f1c40f;
+            --success-color: #2ecc71;
+            --border-radius: 5px;
+            --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a252f;
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background-color: white;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        tbody tr {
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background-color: var(--light-gray);
+        }
+
+        .premium-row {
+            background-color: rgba(241, 196, 15, 0.1);
+        }
+
+        .premium-row:hover {
+            background-color: rgba(241, 196, 15, 0.2);
+        }
+
+        .dentist-logo-small {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .dentist-name-cell {
+            vertical-align: middle;
+        }
+
+        .name-wrapper {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .star-rating {
+            color: var(--premium-color);
+        }
+
+        /* Profiles Section */
+        .profiles {
+            background-color: var(--light-gray);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .profile-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .profile-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .profile-type {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-body {
+            padding: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 15px;
+        }
+
+        .profile-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p, .profile-info ul {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-info ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .profile-footer {
+            padding: 15px 20px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-rating .star-rating {
+            margin-right: 5px;
+        }
+
+        .profile-link a {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .premium-card {
+            border: 2px solid var(--premium-color);
+        }
+
+        .premium-badge {
+            background-color: var(--premium-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: white;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-logo {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .featured-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .featured-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .benefit h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Matcher Section */
+        .matcher {
+            background-color: var(--light-gray);
+        }
+
+        .matcher-content {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .matcher-question {
+            display: none;
+            padding: 30px;
+        }
+
+        .matcher-question.active {
+            display: block;
+        }
+
+        .matcher-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .matcher-option {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .matcher-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .matcher-result {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .matcher-result.active {
+            display: block;
+        }
+
+        #result-content {
+            margin: 20px 0;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-list {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 0 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 450px;
+        }
+
+        .map-container iframe {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .premium-contact {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .premium-contact h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .premium-contact p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #a3c2db;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-disclaimer {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+            }
+            
+            .featured-image {
+                order: -1;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+            .matcher-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="O'Fallon Dentists Logo">
-                <h1>O'Fallon Dentists</h1>
-            </div>
-            
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
+        <div class="container">
+            <h1>O'Fallon Dentists Directory</h1>
             <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#comparison">Compare Dentists</a></li>
-                    <li><a href="#matcher">Find Your Dentist</a></li>
-                    <li><a href="#featured">Featured Practice</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#comparison">Quick Compare</a></li>
+                    <li><a href="#profiles">Dentist Profiles</a></li>
+                    <li><a href="#featured">Featured Dentist</a></li>
+                    <li><a href="#matcher">Find Your Match</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Complete O'Fallon Dentist Guide - Compare All 17 Practices</h1>
-                <p>See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.</p>
-                <div class="hero-buttons">
-                    <a href="#comparison" class="btn">Compare All Dentists</a>
-                    <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
-                </div>
+            <h2>Find Your Perfect Dentist in O'Fallon</h2>
+            <p>Compare all dental practices in the 62269 area to find your ideal dental care match</p>
+            <div class="hero-buttons">
+                <a href="#comparison" class="btn btn-primary">Compare All Dentists</a>
+                <a href="#featured" class="btn btn-secondary">See Our Top Pick</a>
             </div>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="intro-section">
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
         <div class="container">
-            <h2>Looking for a Dentist in O'Fallon? You're Not Alone.</h2>
-            <p>With 17 dental practices spread across O'Fallon, Shiloh, and the surrounding areas, choosing the right dentist can feel overwhelming.</p>
+            <h2>Dental Practice Comparison Chart</h2>
+            <p>Compare all dental practices in the O'Fallon area side by side to find the perfect match for your dental care needs.</p>
             
-            <p>Maybe you need a practice that accepts your insurance, or you're looking for someone great with kids. Perhaps you're dealing with dental anxiety and need sedation options, or you want modern technology and convenient evening hours. You might be tired of the "drill and bill" approach and want a dentist who actually listens to your concerns.</p>
-            
-            <p><strong>That's exactly why we created this complete comparison guide.</strong> We've researched every practice, gathered real pricing information, and organized everything so you can find your perfect dental match without the runaround.</p>
-            
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">Practices Compared</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5min</div>
-                    <div class="stat-label">To Find Your Match</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Local & Unbiased</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Compare Section -->
-    <section class="why-compare-section">
-        <div class="container">
-            <h2>Why Compare Before You Commit?</h2>
-            <p>Dental care costs in O'Fallon vary dramatically - from $150 routine cleanings to premium practices charging $300+. But advertised prices rarely tell the whole story. Insurance acceptance, sedation options, and evening availability can turn a "great deal" into a frustrating experience.</p>
-            <p><strong>Our side-by-side comparison shows you exactly what to expect</strong> at each location, helping you make an informed decision that saves both time and money.</p>
-        </div>
-    </section>
-
-    <!-- Find Your Dentist Matcher Section -->
-    <section id="matcher" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Find Your Perfect Dental Match</h2>
-                <p>Answer a few questions to find the perfect dental practice for your needs.</p>
-            </div>
-            
-            <div class="matcher-container">
-                <div class="matcher-question active" id="question-1">
-                    <h3>What type of dental care are you looking for?</h3>
-                    <div class="matcher-options">
-                        <div class="matcher-option" data-value="general">General/Family Dentistry</div>
-                        <div class="matcher-option" data-value="cosmetic">Cosmetic Dentistry</div>
-                        <div class="matcher-option" data-value="pediatric">Pediatric Dentistry</div>
-                        <div class="matcher-option" data-value="specialty">Specialty Care (Orthodontics, Surgery)</div>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-2">
-                    <h3>Do you experience dental anxiety or fear?</h3>
-                    <div class="matcher-options">
-                        <div class="matcher-option" data-value="high">Yes, I need sedation options</div>
-                        <div class="matcher-option" data-value="moderate">Some anxiety, but nitrous oxide would help</div>
-                        <div class="matcher-option" data-value="low">No, I'm comfortable with dental visits</div>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-3">
-                    <h3>When do you prefer to schedule appointments?</h3>
-                    <div class="matcher-options">
-                        <div class="matcher-option" data-value="standard">Standard business hours</div>
-                        <div class="matcher-option" data-value="evening">Evening appointments</div>
-                        <div class="matcher-option" data-value="weekend">Weekend availability</div>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-4">
-                    <h3>Do you have children who need dental care?</h3>
-                    <div class="matcher-options">
-                        <div class="matcher-option" data-value="specialist">Yes, I need a pediatric specialist</div>
-                        <div class="matcher-option" data-value="family">Yes, but a family dentist is fine</div>
-                        <div class="matcher-option" data-value="adult">No, adult care only</div>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-5">
-                    <h3>What is your budget for dental services?</h3>
-                    <div class="matcher-options">
-                        <div class="matcher-option" data-value="budget">Budget-Friendly</div>
-                        <div class="matcher-option" data-value="mid">Moderate</div>
-                        <div class="matcher-option" data-value="premium">Premium</div>
-                    </div>
-                </div>
-                
-                <div class="matcher-result" id="matcher-result">
-                    <h3>Your Recommended Dental Practices</h3>
-                    <p>Based on your preferences, we recommend these dental practices:</p>
-                    <div id="result-content" class="result-dentists">
-                        <!-- Results will be populated by JavaScript -->
-                    </div>
-                    <button id="restart-matcher" class="btn">Start Over</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dentist Comparison Section -->
-    <section id="comparison" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>All O'Fallon Dental Practices Compared Side-by-Side</h2>
-                <p>See prices, services, hours, and patient reviews for every dental practice in the O'Fallon area.</p>
-            </div>
-            
-            <div class="filter-container">
+            <div class="filters">
                 <div class="filter-group">
                     <label for="type-filter">Practice Type</label>
                     <select id="type-filter">
@@ -204,280 +813,183 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label for="price-filter">Price Range</label>
-                    <select id="price-filter">
-                        <option value="all">All Prices</option>
-                        <option value="budget">Budget-Friendly</option>
-                        <option value="mid">Moderate</option>
-                        <option value="premium">Premium</option>
+                    <label for="sedation-filter">Sedation Options</label>
+                    <select id="sedation-filter">
+                        <option value="all">All Options</option>
+                        <option value="nitrous">Nitrous Oxide</option>
+                        <option value="oral">Oral Sedation</option>
+                        <option value="iv">IV Sedation</option>
                     </select>
                 </div>
                 
                 <div class="filter-group">
-                    <label for="amenity-filter">Special Features</label>
-                    <select id="amenity-filter">
-                        <option value="all">All Features</option>
-                        <option value="sedation">Sedation Options</option>
-                        <option value="pediatric">Pediatric-Friendly</option>
-                        <option value="evening">Evening/Weekend Hours</option>
-                        <option value="inhouse">In-House Payment Plans</option>
+                    <label for="service-filter">Special Services</label>
+                    <select id="service-filter">
+                        <option value="all">All Services</option>
+                        <option value="emergency">Emergency Care</option>
+                        <option value="invisalign">Invisalign</option>
+                        <option value="payment">Payment Plans</option>
                     </select>
                 </div>
             </div>
             
-            <div class="comparison-container">
+            <div class="table-container">
                 <table id="comparison-table">
                     <thead>
                         <tr>
                             <th>Practice Name</th>
+                            <th>Type</th>
                             <th>Specialties</th>
-                            <th>Price Range</th>
-                            <th>Best Times to Visit</th>
-                            <th>What Patients Love Most</th>
-                            <th>Rating & Reviews</th>
+                            <th>Sedation Options</th>
+                            <th>Special Services</th>
+                            <th>Rating</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Table content will be populated by JavaScript -->
+                        <!-- Table rows will be populated by JavaScript -->
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <!-- Featured Practice Section -->
-    <section id="featured" class="section featured-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>⭐ Our Top Recommendation for Comprehensive Family Care</h2>
-                <p>Spring Valley Dental Group stands out in the O'Fallon dental scene for one key reason: truly personalized attention.</p>
-            </div>
-            
-            <div class="featured-practice">
-                <div class="featured-header">
-                    <div class="practice-logo">
-                        <img src="images/spring-valley-logo.png" alt="Spring Valley Dental Group">
-                    </div>
-                    <div class="practice-info">
-                        <h3>Spring Valley Dental Group</h3>
-                        <span class="preferred-badge">Preferred Choice</span>
-                    </div>
-                </div>
-                
-                <div class="featured-content">
-                    <div class="featured-description">
-                        <p><strong>What sets them apart:</strong> While most dental practices offer cookie-cutter care, Spring Valley creates truly personalized treatment plans based on your specific needs, schedule, and comfort level. Their team of experienced dentists combines modern technology with a genuine commitment to patient education and comfort.</p>
-                        
-                        <p><strong>Perfect for O'Fallon families because:</strong> They understand that every family member has different dental needs. From gentle pediatric care that makes kids actually excited about dental visits, to comprehensive cosmetic services for adults, to anxiety management for nervous patients - they've mastered the art of making everyone feel comfortable.</p>
-                    </div>
-                    
-                    <div class="featured-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-users"></i>
-                            <h4>Family-Focused Approach</h4>
-                            <p>Comprehensive care for patients of all ages in one convenient location</p>
-                        </div>
-                        
-                        <div class="highlight-item">
-                            <i class="fas fa-laptop-medical"></i>
-                            <h4>Advanced Technology</h4>
-                            <p>State-of-the-art equipment for more comfortable, efficient treatment</p>
-                        </div>
-                        
-                        <div class="highlight-item">
-                            <i class="fas fa-heart"></i>
-                            <h4>Anxiety-Free Environment</h4>
-                            <p>Sedation options and comfort amenities for nervous patients</p>
-                        </div>
-                        
-                        <div class="highlight-item">
-                            <i class="fas fa-credit-card"></i>
-                            <h4>Flexible Payment Options</h4>
-                            <p>In-house payment plans, CareCredit, and most insurance accepted</p>
-                        </div>
-                    </div>
-                    
-                    <div class="featured-footer">
-                        <p><strong>The bottom line:</strong> If you want dental care that feels more like visiting a trusted friend than a sterile medical facility, Spring Valley Dental Group delivers exactly that experience.</p>
-                        <a href="#" class="btn">Visit Spring Valley Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Find Your Dentist Section -->
-    <section id="find-dentist" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Find Your Dentist</h2>
-                <p>Locate all dental practices in the O'Fallon area and start your dental care journey today.</p>
-            </div>
-            
-            <div class="find-dentist-container">
-                <div class="map-wrapper">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49155.89308929049!2d-89.95040842167969!3d38.59220000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887b2c4c4c4c4c4c%3A0x4c4c4c4c4c4c4c4c!2sO%27Fallon%2C%20IL!5e0!3m2!1sen!2sus!4v1625097600000!5m2!1sen!2sus"
-                        width="100%" 
-                        height="400" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="O'Fallon Dental Practices Map">
-                    </iframe>
-                    <div class="map-overlay">
-                        <div class="map-info">
-                            <h3>17 Dental Practices in O'Fallon Area</h3>
-                            <p>Use the map above to explore dental practice locations throughout O'Fallon, Shiloh, and surrounding areas.</p>
-                            <div class="practice-locations">
-                                <div class="location-grid">
-                                    <div class="location-item preferred">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>Spring Valley Dental Group</strong>
-                                            <span>1234 Spring Valley Dr, O'Fallon, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="location-item">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>Innovation Dental</strong>
-                                            <span>567 Innovation Way, O'Fallon, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="location-item">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>Shiloh Dental Group</strong>
-                                            <span>890 Shiloh Rd, Shiloh, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="location-item">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>O'Fallon Family Dental</strong>
-                                            <span>321 Family Dr, O'Fallon, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="location-item">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>Smile Center</strong>
-                                            <span>456 Smile Ave, O'Fallon, IL</span>
-                                        </div>
-                                    </div>
-                                    <div class="location-item">
-                                        <span class="location-marker">📍</span>
-                                        <div class="location-details">
-                                            <strong>Affordable Dentures & Implants</strong>
-                                            <span>789 Affordable Blvd, O'Fallon, IL</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="view-all-practices">
-                                    <p><strong>+ 11 more practices</strong> - See complete list in comparison table above</p>
-                                </div>
-                            </div>
-                            <div class="map-legend">
-                                <div class="legend-item">
-                                    <span class="legend-marker preferred"></span>
-                                    <span>Spring Valley Dental Group (Preferred)</span>
-                                </div>
-                                <div class="legend-item">
-                                    <span class="legend-marker standard"></span>
-                                    <span>Other Dental Practices</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Profiles Section -->
-    <section class="section">
+    <section id="profiles" class="profiles">
         <div class="container">
-            <div class="section-title">
-                <h2>Complete O'Fallon Dental Practice Directory</h2>
-                <p>Detailed profiles of every dental practice in the O'Fallon area - honest reviews, real pricing, and what makes each one unique.</p>
-            </div>
+            <h2>Dentist Profiles</h2>
+            <p>Detailed information about each dental practice in the O'Fallon area to help you make an informed decision.</p>
             
-            <div class="profiles-grid">
-                <!-- Profile cards will be populated by JavaScript -->
+            <div id="dentist-profiles" class="profile-grid">
+                <!-- Dentist profile cards will be populated by JavaScript -->
             </div>
         </div>
     </section>
-    <!-- Insider Tips Section -->
-    <section class="insider-tips-section">
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
         <div class="container">
-            <div class="section-title">
-                <h2>Insider Tips for O'Fallon Dental Success</h2>
-                <p>Local knowledge that helps you get the best dental care experience in O'Fallon.</p>
-            </div>
+            <div class="premium-badge">Preferred</div>
+            <h2>Featured Practice: Dream Dentist</h2>
+            <p>Our top recommendation for those seeking comprehensive dental care with advanced sedation options.</p>
             
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <div class="tip-icon">🚗</div>
-                    <h4>Parking Reality Check</h4>
-                    <p>Highway 50 locations can get crowded during peak hours (Tuesday-Thursday 3-6pm). The Shiloh practices typically have better parking availability, and Innovation Dental on Insight Avenue has the most convenient parking setup.</p>
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="images/logos/dreamdentist.png" alt="Dream Dentist logo" class="featured-logo">
                 </div>
                 
-                <div class="tip-card">
-                    <div class="tip-icon">⏰</div>
-                    <h4>Beat the Rush</h4>
-                    <p>Most O'Fallon dental practices are busiest Tuesday-Thursday afternoons and Friday mornings. Try Monday mornings or Tuesday-Thursday 10am-2pm slots for the most attention and shortest wait times.</p>
+                <div class="featured-info">
+                    <h3>Why Dream Dentist Stands Out</h3>
+                    <p>Dream Dentist offers a comprehensive dental experience focused on patient comfort and advanced care. With multiple sedation options and a full range of cosmetic and general dental services, they've created an environment where even the most anxious patients feel at ease.</p>
+                    
+                    <div class="featured-benefits">
+                        <div class="benefit">
+                            <h4>Complete Sedation Options</h4>
+                            <p>Nitrous oxide, oral sedation, and IV sedation available</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Cosmetic Excellence</h4>
+                            <p>Advanced cosmetic dentistry and smile transformation</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Emergency Care</h4>
+                            <p>Available for dental emergencies and urgent needs</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Flexible Payment</h4>
+                            <p>Multiple payment plan options and financing available</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.dreamdentist.com/" target="_blank" class="btn btn-primary">Visit Dream Dentist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matcher Section -->
+    <section id="matcher" class="matcher">
+        <div class="container">
+            <h2>Find Your Dental Match</h2>
+            <p>Answer a few questions about your dental needs and preferences to find the perfect practice for you.</p>
+            
+            <div class="matcher-content">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What type of dental care do you need most?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="general">General/Family Dentistry</button>
+                        <button class="matcher-option" data-value="cosmetic">Cosmetic Dentistry</button>
+                        <button class="matcher-option" data-value="pediatric">Pediatric/Children's Care</button>
+                        <button class="matcher-option" data-value="specialty">Specialty Services (Orthodontics, Oral Surgery)</button>
+                    </div>
                 </div>
                 
-                <div class="tip-card">
-                    <div class="tip-icon">💰</div>
-                    <h4>Insurance Insider Info</h4>
-                    <p>While most practices accept major insurance, call ahead to verify your specific plan. Some practices offer better cash discounts than insurance rates, especially for routine cleanings and basic procedures.</p>
+                <div class="matcher-question" id="question-2">
+                    <h3>How would you describe your dental anxiety level?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="low">Low - I'm comfortable with dental visits</button>
+                        <button class="matcher-option" data-value="moderate">Moderate - Some nervousness but manageable</button>
+                        <button class="matcher-option" data-value="high">High - I need sedation or special comfort measures</button>
+                    </div>
                 </div>
                 
-                <div class="tip-card">
-                    <div class="tip-icon">🦷</div>
-                    <h4>Emergency Dental Care</h4>
-                    <p>For after-hours emergencies, Innovation Dental and Park Place Dental Group have the most reliable emergency contact systems. Keep their numbers handy for weekend dental emergencies.</p>
+                <div class="matcher-question" id="question-3">
+                    <h3>Do you have children who need dental care?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="specialist">Yes, I want a pediatric specialist</button>
+                        <button class="matcher-option" data-value="family">Yes, but family practice is fine</button>
+                        <button class="matcher-option" data-value="adult">No, adult-only care</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Ideal Dental Practice Match</h3>
+                    <div id="result-content"></div>
+                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="section">
+    <section id="faq" class="faq">
         <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions About O'Fallon Dentists</h2>
-                <p>Real answers to the questions we hear most about dental care and choosing a dentist in O'Fallon.</p>
-            </div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about dental care and choosing a dentist in the O'Fallon area.</p>
             
-            <div class="faq-container">
+            <div class="faq-list">
                 <!-- FAQ items will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>About Our O'Fallon Dentist Directory</h2>
-                <p>Helping O'Fallon families find the perfect dental care since 2025.</p>
-            </div>
+            <h2>Find Your Dentist</h2>
+            <p>Locate all dental practices in the O'Fallon area and start your dental care journey today.</p>
             
-            <div class="about-content">
-                <h3>Why Trust Our Recommendations?</h3>
-                <p>We're not affiliated with any dental practice in O'Fallon. Our recommendations are based on extensive research, patient reviews, and actual visits to each location. We update our information regularly to ensure accuracy.</p>
+            <div class="contact-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d24966.682117028735!2d-89.92642272345581!3d38.59219199650342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdentists%20near%20O&#39;Fallon%2C%20IL%2062269!5e0!3m2!1sen!2sus!4v1653508272909!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 
-                <h3>How We Research Each Practice</h3>
-                <ul>
-                    <li>Mystery shopper visits to assess patient experience</li>
-                    <li>Analysis of online reviews and patient feedback</li>
-                    <li>Verification of pricing, services, and insurance acceptance</li>
-                    <li>Assessment of technology, cleanliness, and staff professionalism</li>
-                </ul>
+                <div class="contact-info">
+                    <h3>Ready to start your dental care journey?</h3>
+                    <p>Visit any of the dental practices listed in our directory or contact them directly through their websites for more information about services, insurance acceptance, and appointments.</p>
+                    <p>For comprehensive dental care with advanced comfort options, we recommend:</p>
+                    <div class="premium-contact">
+                        <img src="images/logos/dreamdentist.png" alt="Dream Dentist logo" class="contact-logo">
+                        <div>
+                            <h4>Dream Dentist</h4>
+                            <p>Phone: (618) 726-2699</p>
+                            <p>Address: 1646 W Highway 50, O'Fallon, IL 62269</p>
+                            <p>Website: <a href="https://www.dreamdentist.com/" target="_blank">dreamdentist.com</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -485,46 +997,26 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>O'Fallon Dentists</h3>
-                    <p>Your comprehensive guide to dental care in O'Fallon, IL.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>O'Fallon Dentists Directory</h3>
+                    <p>Your guide to dental care in the 62269 area</p>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#comparison">Compare Dentists</a></li>
-                        <li><a href="#matcher">Find Your Dentist</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#comparison">Comparison Chart</a></li>
+                        <li><a href="#profiles">Dentist Profiles</a></li>
                         <li><a href="#featured">Featured Practice</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Popular Searches</h3>
-                    <ul>
-                        <li><a href="#">Family Dentists</a></li>
-                        <li><a href="#">Cosmetic Dentistry</a></li>
-                        <li><a href="#">Pediatric Dentists</a></li>
-                        <li><a href="#">Emergency Dental Care</a></li>
-                        <li><a href="#">Dental Implants</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>About</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+                <div class="footer-disclaimer">
+                    <h4>Disclaimer</h4>
+                    <p>This directory is for informational purposes only. Information is subject to change. Please contact individual dental practices for the most current services, pricing, and availability. We are not affiliated with any dental practice listed.</p>
                 </div>
             </div>
             
@@ -534,14 +1026,1178 @@
         </div>
     </footer>
 
-    <!-- Leaflet JS for Map -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
-    <!-- JavaScript Files -->
-    <script src="js/dentistsData.js"></script>
-    <script src="js/faqData.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/mapScript.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Complete Dentists Data with correct logos and review counts
+        const dentistsData = [
+          {
+            id: "dreamdentist",
+            name: "Dream Dentist",
+            type: "Cosmetic & Sedation",
+            specialties: ["Cosmetic Dentistry", "Sedation Dentistry", "General Care"],
+            rating: 5.0,
+            reviews: 101,
+            website: "https://www.dreamdentist.com/",
+            logo: "images/logos/dreamdentist.png",
+            address: "1646 W Highway 50, O'Fallon, IL 62269",
+            phone: "(618) 726-2699",
+            isPremium: true,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Invisalign", "Payment Plans"],
+            features: [
+              "Complete sedation options available",
+              "Advanced cosmetic dentistry",
+              "Anxiety-friendly practice",
+              "Spa-like environment"
+            ],
+            amenities: [
+              "Nitrous oxide, oral, and IV sedation",
+              "Emergency dental care",
+              "Comprehensive cosmetic services",
+              "Flexible payment options"
+            ]
+          },
+          {
+            id: "innovationdental",
+            name: "Innovation Dental",
+            type: "General & Implant",
+            specialties: ["Dental Implants", "General Dentistry", "IV Sedation"],
+            rating: 4.9,
+            reviews: 1002,
+            website: "https://www.innovationdentalgroup.com/",
+            logo: "images/logos/innovationl.jpg",
+            address: "717 Insight Avenue, Suite 200, O'Fallon, IL 62269",
+            phone: "(618) 277-6550",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Invisalign", "Payment Plans"],
+            features: [
+              "Implant specialists",
+              "IV sedation available",
+              "Advanced technology",
+              "Comprehensive care"
+            ],
+            amenities: [
+              "State-of-the-art equipment",
+              "Multiple sedation options",
+              "Emergency services",
+              "Financing available"
+            ]
+          },
+          {
+            id: "cambridgedental",
+            name: "Cambridge Dental Care",
+            type: "General & Cosmetic",
+            specialties: ["General Dentistry", "Cosmetic Dentistry", "Family Care"],
+            rating: 4.9,
+            reviews: 943,
+            website: "https://cambridgedentalcare.com/",
+            logo: "images/logos/cambridge.webp",
+            address: "O'Fallon, IL 62269",
+            phone: "Contact via website",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Family dental care",
+              "Cosmetic services",
+              "General dentistry",
+              "Modern facility"
+            ],
+            amenities: [
+              "Comfortable environment",
+              "Invisalign provider",
+              "Emergency services",
+              "Insurance accepted"
+            ]
+          },
+          {
+            id: "ofallon-family",
+            name: "O'Fallon Family Dental Care",
+            type: "General & Family",
+            specialties: ["Family Dentistry", "General Care", "Preventive Care"],
+            rating: 4.7,
+            reviews: 719,
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=OF",
+            address: "O'Fallon, IL 62269",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Family-friendly practice",
+              "Comprehensive care",
+              "Preventive focus",
+              "All ages welcome"
+            ],
+            amenities: [
+              "Child-friendly environment",
+              "Preventive care emphasis",
+              "Flexible scheduling",
+              "Insurance coordination"
+            ]
+          },
+          {
+            id: "amazing-smiles",
+            name: "Amazing Smiles Orthodontics",
+            type: "Orthodontist",
+            specialties: ["Orthodontics", "Braces", "Invisalign"],
+            rating: 5.0,
+            reviews: 243,
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=AS",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Payment Plans"],
+            features: [
+              "Orthodontic specialists",
+              "Braces and aligners",
+              "Smile transformation",
+              "Modern technology"
+            ],
+            amenities: [
+              "Latest orthodontic technology",
+              "Invisalign certified",
+              "Payment plan options",
+              "Consultation available"
+            ]
+          },
+          {
+            id: "lakepointe",
+            name: "Lake Pointe Dental Group",
+            type: "General & Family",
+            specialties: ["General Dentistry", "Family Care", "Preventive Care"],
+            rating: 4.8,
+            reviews: "A+ BBB Rating",
+            website: "https://lakepointedentalgroup.com/",
+            logo: "images/logos/lakepointe.webp",
+            address: "O'Fallon area",
+            phone: "Contact via website",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Comprehensive dental care",
+              "Family-friendly practice",
+              "A+ BBB rating",
+              "Quality focused"
+            ],
+            amenities: [
+              "Modern facility",
+              "Emergency services",
+              "Family environment",
+              "Payment options"
+            ]
+          },
+          {
+            id: "associated-pediatric",
+            name: "Associated Pediatric Dentistry",
+            type: "Pediatric Specialist",
+            specialties: ["Pediatric Dentistry", "Special Needs Care", "General Anesthesia"],
+            rating: 4.9,
+            reviews: 314,
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=AP",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "General Anesthesia"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Pediatric specialists",
+              "Special needs expertise",
+              "General anesthesia available",
+              "Child-focused environment"
+            ],
+            amenities: [
+              "Kid-friendly atmosphere",
+              "Specialized equipment",
+              "Behavior management",
+              "Parent education"
+            ]
+          },
+          {
+            id: "olson-orthodontics",
+            name: "Olson Orthodontics",
+            type: "Orthodontist",
+            specialties: ["Orthodontics", "Braces", "Invisalign"],
+            rating: 5.0,
+            reviews: 170,
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=OO",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Payment Plans"],
+            features: [
+              "Orthodontic specialists",
+              "Advanced techniques",
+              "Invisalign certified",
+              "Digital technology"
+            ],
+            amenities: [
+              "Modern orthodontic care",
+              "Digital imaging",
+              "Flexible appointments",
+              "Progress tracking"
+            ]
+          },
+          {
+            id: "dentalstudio",
+            name: "The Dental Studio",
+            type: "General & Cosmetic",
+            specialties: ["General Dentistry", "Cosmetic Dentistry", "Nitrous Oxide"],
+            rating: 5.0,
+            reviews: 4,
+            website: "https://thedentalstudio.com/",
+            logo: "images/logos/dentalstudio.webp",
+            address: "O'Fallon, IL 62269",
+            phone: "Contact via website",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide"],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "General dentistry",
+              "Cosmetic services",
+              "Nitrous oxide available",
+              "Modern practice"
+            ],
+            amenities: [
+              "Comfortable environment",
+              "Nitrous oxide sedation",
+              "Cosmetic expertise",
+              "Pediatric-friendly"
+            ]
+          },
+          {
+            id: "stonefalls",
+            name: "Stone Falls Dental Care",
+            type: "General & Family",
+            specialties: ["General Dentistry", "Family Care", "Preventive Care"],
+            rating: 4.8,
+            reviews: "Contact for info",
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=SF",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Family dental care",
+              "Comprehensive services",
+              "Preventive focus",
+              "Quality care"
+            ],
+            amenities: [
+              "Family atmosphere",
+              "Modern equipment",
+              "Flexible scheduling",
+              "Insurance assistance"
+            ]
+          },
+          {
+            id: "midamerica-oral",
+            name: "Mid America Oral Surgery",
+            type: "Oral Surgeon",
+            specialties: ["Oral Surgery", "Extractions", "Implants"],
+            rating: 4.9,
+            reviews: 744,
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=MA",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Oral surgery specialists",
+              "Multiple sedation options",
+              "Advanced procedures",
+              "Emergency services"
+            ],
+            amenities: [
+              "Surgical expertise",
+              "Full sedation options",
+              "Emergency availability",
+              "Modern facility"
+            ]
+          },
+          {
+            id: "oralsurgeons-so-il",
+            name: "Oral Surgeons of So. IL",
+            type: "Oral Surgeon",
+            specialties: ["Oral Surgery", "Maxillofacial Surgery", "Implants"],
+            rating: 5.0,
+            reviews: "Contact for info",
+            website: "#",
+            logo: "https://via.placeholder.com/60x60/3498db/ffffff?text=OS",
+            address: "Southern Illinois area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Maxillofacial surgery",
+              "Comprehensive sedation",
+              "Surgical expertise",
+              "Emergency care"
+            ],
+            amenities: [
+              "Advanced surgical techniques",
+              "Complete sedation options",
+              "Specialist care",
+              "Emergency services"
+            ]
+          },
+          {
+            id: "greenmountfamily",
+            name: "Green Mount Family Dentistry",
+            type: "General & Family",
+            specialties: ["Family Dentistry", "Cosmetic Dentistry", "Invisalign"],
+            rating: 4.89,
+            reviews: 9,
+            website: "https://greenmountfamilydentistry.com/",
+            logo: "images/logos/greenmountfamily.webp",
+            address: "1490 North Greenmount Road, Suite A, O'Fallon, IL 62269",
+            phone: "(618) 622-9720",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Family dental care",
+              "Cosmetic services",
+              "Invisalign provider",
+              "Modern facility"
+            ],
+            amenities: [
+              "Extended evening hours",
+              "Family-friendly",
+              "Invisalign certified",
+              "Financing options"
+            ]
+          },
+          {
+            id: "aspendental",
+            name: "Aspen Dental",
+            type: "General & Corporate",
+            specialties: ["General Dentistry", "Dentures", "Emergency Care"],
+            rating: 4.2,
+            reviews: 694,
+            website: "https://www.aspendental.com/dentist/il/o-fallon/",
+            logo: "images/logos/aspen.svg",
+            address: "1707 West Highway 50, O'Fallon, IL 62269",
+            phone: "(618) 206-5488",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Corporate dental chain",
+              "Convenient scheduling",
+              "Multiple services",
+              "Peace of Mind Promise®"
+            ],
+            amenities: [
+              "Extended hours",
+              "Multiple locations",
+              "Financing available",
+              "Emergency services"
+            ]
+          },
+          {
+            id: "azarorthodontics",
+            name: "Azar Orthodontics",
+            type: "Orthodontist",
+            specialties: ["Orthodontics", "Braces", "Invisalign"],
+            rating: 4.8,
+            reviews: "A+ BBB Rating",
+            website: "https://azarorthodontics.com/",
+            logo: "images/logos/azar.png",
+            address: "O'Fallon, IL 62269",
+            phone: "Contact via website",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Payment Plans"],
+            features: [
+              "Orthodontic specialists",
+              "Braces and aligners",
+              "A+ BBB rating",
+              "Modern technology"
+            ],
+            amenities: [
+              "Advanced orthodontics",
+              "Digital planning",
+              "Consultation available",
+              "Flexible payments"
+            ]
+          },
+          {
+            id: "allgrins4kids",
+            name: "All Grins 4 Kids",
+            type: "Pediatric Specialist",
+            specialties: ["Pediatric Dentistry", "Special Needs Care", "Child-Friendly"],
+            rating: 4.8,
+            reviews: "Contact for info",
+            website: "https://www.allgrins4kids.com/",
+            logo: "images/logos/allgrins4kids.svg",
+            address: "317 Tamarack Lane, Shiloh, IL 62269",
+            phone: "(618) 628-4400",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Pediatric specialists",
+              "Child-friendly environment",
+              "Special needs care",
+              "Fun atmosphere"
+            ],
+            amenities: [
+              "Kid-focused design",
+              "Nitrous oxide available",
+              "Digital X-rays",
+              "Refer a Friend program"
+            ]
+          }
+        ];
+
+        // FAQ Data
+        const faqData = [
+          {
+            question: "How do I choose the right dentist for my family?",
+            answer: "When choosing a dentist, consider factors like location, office hours, services offered, and whether they treat patients of all ages. Check reviews, ask for recommendations, and consider scheduling a consultation to meet the dentist and staff before making your decision."
+          },
+          {
+            question: "What dental insurance plans are accepted by most O'Fallon dentists?",
+            answer: "Most dentists in O'Fallon accept major insurance plans including Delta Dental, MetLife, Cigna, Aetna, and Blue Cross Blue Shield. Many also accept CareCredit and offer in-house payment plans. Always verify coverage with your specific dentist before treatment."
+          },
+          {
+            question: "How often should I visit the dentist?",
+            answer: "For most people, dentists recommend checkups and cleanings twice a year (every 6 months). However, your dentist may suggest more frequent visits if you have specific dental health concerns, gum disease, or are at higher risk for dental problems."
+          },
+          {
+            question: "What should I do in case of a dental emergency?",
+            answer: "For dental emergencies like severe pain, broken teeth, or infections, contact your dentist immediately for an emergency appointment. Many O'Fallon dentists offer emergency services or can refer you to an emergency dental provider. If you can't reach your dentist and are experiencing severe pain or swelling, visit an urgent care center or emergency room."
+          },
+          {
+            question: "What options are available for dental anxiety?",
+            answer: "Many dentists in O'Fallon offer solutions for dental anxiety including nitrous oxide (laughing gas), oral sedation, and IV sedation. Some practices also provide comfort amenities like massage chairs, TVs, or comfort dogs. Discuss your anxiety with potential dentists to find one who specializes in treating anxious patients."
+          },
+          {
+            question: "How do I know if a dentist is good with children?",
+            answer: "Look for dentists who specifically mention pediatric services or family dentistry. Check reviews from other parents, and consider whether the practice has child-friendly amenities or a welcoming environment for kids. Pediatric specialists have additional training specifically for treating children."
+          },
+          {
+            question: "What payment options are typically available?",
+            answer: "Most O'Fallon dentists accept major credit cards, insurance, and CareCredit. Many offer payment plans, financing options, or in-house dental savings plans. Some practices also offer special promotions for new patients or discounts for seniors or military families."
+          },
+          {
+            question: "How do I know which cosmetic dental procedures are right for me?",
+            answer: "The best way to determine appropriate cosmetic procedures is through a consultation with a dentist who offers cosmetic services. They can evaluate your specific needs and goals, explain available options (such as whitening, veneers, or orthodontics), and recommend a personalized treatment plan."
+          }
+        ];
+
+        // BULLETPROOF INITIALIZATION
+        function initializeSite() {
+            console.log('🚀 Starting dentist site initialization...');
+            console.log('📊 Dentists data loaded:', dentistsData.length, 'practices');
+            console.log('❓ FAQ data loaded:', faqData.length, 'questions');
+            
+            try {
+                initializeNavigation();
+                console.log('✅ Navigation initialized');
+                
+                populateComparisonTable();
+                console.log('✅ Comparison table populated');
+                
+                populateDentistProfiles();
+                console.log('✅ Dentist profiles populated');
+                
+                setupFilters();
+                console.log('✅ Filters initialized');
+                
+                setupMatcher();
+                console.log('✅ Matcher initialized');
+                
+                populateFAQSection();
+                console.log('✅ FAQ section populated');
+                
+                console.log('🎉 Dentist site initialization complete!');
+                
+            } catch (error) {
+                console.error('❌ Error during initialization:', error);
+            }
+        }
+
+        // Multiple initialization triggers
+        document.addEventListener('DOMContentLoaded', initializeSite);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSite);
+        } else {
+            initializeSite();
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(initializeSite, 100);
+        });
+        
+        setTimeout(function() {
+            if (!document.querySelector('#comparison-table tbody tr')) {
+                console.log('🔄 Fallback initialization triggered');
+                initializeSite();
+            }
+        }, 500);
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans.forEach(span => span.classList.toggle('active'));
+                });
+            }
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.querySelectorAll('span').forEach(span => span.classList.remove('active'));
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Populate comparison table
+        function populateComparisonTable() {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            if (!tableBody) {
+                console.warn('⚠️ Comparison table tbody not found');
+                return;
+            }
+            
+            tableBody.innerHTML = '';
+            
+            // Sort dentists: premium first, then by rating
+            const sortedDentists = [...dentistsData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedDentists.forEach(dentist => {
+                const row = document.createElement('tr');
+                if (dentist.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Practice name cell
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('dentist-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = dentist.logo;
+                logo.alt = `${dentist.name} Logo`;
+                logo.classList.add('dentist-logo-small');
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = dentist.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (dentist.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Type cell
+                const typeCell = document.createElement('td');
+                typeCell.textContent = dentist.type;
+                row.appendChild(typeCell);
+                
+                // Specialties cell
+                const specialtiesCell = document.createElement('td');
+                const specialtiesList = document.createElement('ul');
+                specialtiesList.style.margin = '0';
+                specialtiesList.style.paddingLeft = '20px';
+                
+                dentist.specialties.slice(0, 3).forEach(specialty => {
+                    const specialtyItem = document.createElement('li');
+                    specialtyItem.textContent = specialty;
+                    specialtiesList.appendChild(specialtyItem);
+                });
+                
+                specialtiesCell.appendChild(specialtiesList);
+                row.appendChild(specialtiesCell);
+                
+                // Sedation options cell
+                const sedationCell = document.createElement('td');
+                if (dentist.sedationOptions.length > 0) {
+                    sedationCell.textContent = dentist.sedationOptions.join(', ');
+                } else {
+                    sedationCell.textContent = 'None listed';
+                }
+                row.appendChild(sedationCell);
+                
+                // Special services cell
+                const servicesCell = document.createElement('td');
+                if (dentist.specialServices.length > 0) {
+                    servicesCell.textContent = dentist.specialServices.join(', ');
+                } else {
+                    servicesCell.textContent = 'Contact for services';
+                }
+                row.appendChild(servicesCell);
+                
+                // Rating cell
+                const ratingCell = document.createElement('td');
+                
+                if (dentist.rating) {
+                    const ratingDiv = document.createElement('div');
+                    ratingDiv.classList.add('star-rating');
+                    
+                    const fullStars = Math.floor(dentist.rating);
+                    const hasHalfStar = dentist.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < 5; i++) {
+                        const star = document.createElement('i');
+                        
+                        if (i < fullStars) {
+                            star.className = 'fas fa-star';
+                        } else if (i === fullStars && hasHalfStar) {
+                            star.className = 'fas fa-star-half-alt';
+                        } else {
+                            star.className = 'far fa-star';
+                        }
+                        
+                        ratingDiv.appendChild(star);
+                    }
+                    
+                    const ratingText = document.createElement('div');
+                    if (typeof dentist.reviews === 'number') {
+                        ratingText.textContent = `${dentist.rating} (${dentist.reviews} reviews)`;
+                    } else {
+                        ratingText.textContent = `${dentist.rating} (${dentist.reviews})`;
+                    }
+                    
+                    ratingCell.appendChild(ratingDiv);
+                    ratingCell.appendChild(ratingText);
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                
+                row.appendChild(ratingCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Populate dentist profiles
+        function populateDentistProfiles() {
+            const profilesContainer = document.getElementById('dentist-profiles');
+            if (!profilesContainer) {
+                console.warn('⚠️ Dentist profiles container not found');
+                return;
+            }
+            
+            profilesContainer.innerHTML = '';
+            
+            // Sort dentists: premium first, then by rating
+            const sortedDentists = [...dentistsData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedDentists.forEach(dentist => {
+                const profileCard = document.createElement('div');
+                profileCard.className = 'profile-card';
+                if (dentist.isPremium) {
+                    profileCard.classList.add('premium-card');
+                }
+                
+                // Profile header
+                const profileHeader = document.createElement('div');
+                profileHeader.className = 'profile-header';
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = dentist.logo;
+                logoImg.alt = `${dentist.name} logo`;
+                logoImg.className = 'profile-logo';
+                
+                const profileTitle = document.createElement('div');
+                profileTitle.className = 'profile-title';
+                
+                const nameHeading = document.createElement('h3');
+                nameHeading.textContent = dentist.name;
+                if (dentist.isPremium) {
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'Preferred';
+                    premiumBadge.style.fontSize = '0.7rem';
+                    premiumBadge.style.padding = '2px 8px';
+                    premiumBadge.style.marginLeft = '8px';
+                    nameHeading.appendChild(premiumBadge);
+                }
+                
+                const typeText = document.createElement('div');
+                typeText.className = 'profile-type';
+                typeText.textContent = dentist.type;
+                
+                profileTitle.appendChild(nameHeading);
+                profileTitle.appendChild(typeText);
+                
+                profileHeader.appendChild(logoImg);
+                profileHeader.appendChild(profileTitle);
+                
+                // Profile body
+                const profileBody = document.createElement('div');
+                profileBody.className = 'profile-body';
+                
+                // Specialties info
+                const specialtiesInfo = document.createElement('div');
+                specialtiesInfo.className = 'profile-info';
+                
+                const specialtiesHeading = document.createElement('h4');
+                specialtiesHeading.textContent = 'Specialties';
+                
+                const specialtiesList = document.createElement('ul');
+                
+                dentist.specialties.forEach(specialty => {
+                    const specialtyItem = document.createElement('li');
+                    specialtyItem.textContent = specialty;
+                    specialtiesList.appendChild(specialtyItem);
+                });
+                
+                specialtiesInfo.appendChild(specialtiesHeading);
+                specialtiesInfo.appendChild(specialtiesList);
+                
+                // Features info
+                const featuresInfo = document.createElement('div');
+                featuresInfo.className = 'profile-info';
+                
+                const featuresHeading = document.createElement('h4');
+                featuresHeading.textContent = 'Key Features';
+                
+                const featuresList = document.createElement('ul');
+                
+                dentist.features.forEach(feature => {
+                    const featureItem = document.createElement('li');
+                    featureItem.textContent = feature;
+                    featuresList.appendChild(featureItem);
+                });
+                
+                featuresInfo.appendChild(featuresHeading);
+                featuresInfo.appendChild(featuresList);
+                
+                // Amenities info
+                const amenitiesInfo = document.createElement('div');
+                amenitiesInfo.className = 'profile-info';
+                
+                const amenitiesHeading = document.createElement('h4');
+                amenitiesHeading.textContent = 'Amenities';
+                
+                const amenitiesList = document.createElement('ul');
+                
+                dentist.amenities.forEach(amenity => {
+                    const amenityItem = document.createElement('li');
+                    amenityItem.textContent = amenity;
+                    amenitiesList.appendChild(amenityItem);
+                });
+                
+                amenitiesInfo.appendChild(amenitiesHeading);
+                amenitiesInfo.appendChild(amenitiesList);
+                
+                profileBody.appendChild(specialtiesInfo);
+                profileBody.appendChild(featuresInfo);
+                profileBody.appendChild(amenitiesInfo);
+                
+                // Profile footer
+                const profileFooter = document.createElement('div');
+                profileFooter.className = 'profile-footer';
+                
+                const ratingDiv = document.createElement('div');
+                ratingDiv.className = 'profile-rating';
+                
+                if (dentist.rating) {
+                    const ratingStars = document.createElement('div');
+                    ratingStars.className = 'star-rating';
+                    
+                    const fullStars = Math.floor(dentist.rating);
+                    const hasHalfStar = dentist.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        ratingStars.innerHTML += '★';
+                    }
+                    
+                    if (hasHalfStar) {
+                        ratingStars.innerHTML += '½';
+                    }
+                    
+                    const ratingText = document.createElement('span');
+                    if (typeof dentist.reviews === 'number') {
+                        ratingText.textContent = `${dentist.rating} (${dentist.reviews} reviews)`;
+                    } else {
+                        ratingText.textContent = `${dentist.rating} (${dentist.reviews})`;
+                    }
+                    
+                    ratingDiv.appendChild(ratingStars);
+                    ratingDiv.appendChild(ratingText);
+                } else {
+                    ratingDiv.textContent = 'No rating';
+                }
+                
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'profile-link';
+                
+                const websiteLink = document.createElement('a');
+                websiteLink.href = dentist.website;
+                websiteLink.target = '_blank';
+                websiteLink.textContent = 'Visit Website';
+                
+                linkDiv.appendChild(websiteLink);
+                
+                profileFooter.appendChild(ratingDiv);
+                profileFooter.appendChild(linkDiv);
+                
+                // Assemble profile card
+                profileCard.appendChild(profileHeader);
+                profileCard.appendChild(profileBody);
+                profileCard.appendChild(profileFooter);
+                
+                profilesContainer.appendChild(profileCard);
+            });
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            const typeFilter = document.getElementById('type-filter');
+            const sedationFilter = document.getElementById('sedation-filter');
+            const serviceFilter = document.getElementById('service-filter');
+            
+            if (!typeFilter || !sedationFilter || !serviceFilter) {
+                console.warn('⚠️ Filter elements not found');
+                return;
+            }
+            
+            const applyFilters = () => {
+                const typeValue = typeFilter.value;
+                const sedationValue = sedationFilter.value;
+                const serviceValue = serviceFilter.value;
+                
+                const filteredDentists = dentistsData.filter(dentist => {
+                    // Type filter
+                    if (typeValue !== 'all') {
+                        const typeMatch = dentist.type.toLowerCase().includes(typeValue);
+                        if (!typeMatch) return false;
+                    }
+                    
+                    // Sedation filter
+                    if (sedationValue !== 'all') {
+                        const sedationText = dentist.sedationOptions.join(' ').toLowerCase();
+                        if (sedationValue === 'nitrous' && !sedationText.includes('nitrous')) return false;
+                        if (sedationValue === 'oral' && !sedationText.includes('oral')) return false;
+                        if (sedationValue === 'iv' && !sedationText.includes('iv')) return false;
+                    }
+                    
+                    // Service filter
+                    if (serviceValue !== 'all') {
+                        const servicesText = dentist.specialServices.join(' ').toLowerCase();
+                        if (serviceValue === 'emergency' && !servicesText.includes('emergency')) return false;
+                        if (serviceValue === 'invisalign' && !servicesText.includes('invisalign')) return false;
+                        if (serviceValue === 'payment' && !servicesText.includes('payment')) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                // Update the table with filtered data
+                updateTableWithFilteredData(filteredDentists);
+            };
+            
+            typeFilter.addEventListener('change', applyFilters);
+            sedationFilter.addEventListener('change', applyFilters);
+            serviceFilter.addEventListener('change', applyFilters);
+        }
+
+        function updateTableWithFilteredData(filteredDentists) {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            tableBody.innerHTML = '';
+            
+            filteredDentists.forEach(dentist => {
+                const row = document.createElement('tr');
+                if (dentist.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Create cells similar to populateComparisonTable
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('dentist-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = dentist.logo;
+                logo.alt = `${dentist.name} Logo`;
+                logo.classList.add('dentist-logo-small');
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = dentist.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (dentist.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Add other cells
+                const typeCell = document.createElement('td');
+                typeCell.textContent = dentist.type;
+                row.appendChild(typeCell);
+                
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = dentist.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                const sedationCell = document.createElement('td');
+                sedationCell.textContent = dentist.sedationOptions.length > 0 ? dentist.sedationOptions.join(', ') : 'None listed';
+                row.appendChild(sedationCell);
+                
+                const servicesCell = document.createElement('td');
+                servicesCell.textContent = dentist.specialServices.length > 0 ? dentist.specialServices.join(', ') : 'Contact for services';
+                row.appendChild(servicesCell);
+                
+                const ratingCell = document.createElement('td');
+                if (dentist.rating) {
+                    const ratingText = typeof dentist.reviews === 'number' ? 
+                        `${dentist.rating} (${dentist.reviews} reviews)` : 
+                        `${dentist.rating} (${dentist.reviews})`;
+                    ratingCell.textContent = ratingText;
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                row.appendChild(ratingCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Setup matcher functionality
+        function setupMatcher() {
+            const questions = document.querySelectorAll('.matcher-question');
+            const result = document.getElementById('matcher-result');
+            const resultContent = document.getElementById('result-content');
+            const restartButton = document.getElementById('restart-matcher');
+            
+            if (!questions.length || !result || !resultContent || !restartButton) {
+                console.warn('⚠️ Matcher elements not found');
+                return;
+            }
+            
+            let currentQuestion = 0;
+            const answers = {};
+            
+            questions.forEach((question, index) => {
+                const options = question.querySelectorAll('.matcher-option');
+                
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        answers[`question${index + 1}`] = option.getAttribute('data-value');
+                        
+                        question.classList.remove('active');
+                        
+                        if (index < questions.length - 1) {
+                            questions[index + 1].classList.add('active');
+                            currentQuestion = index + 1;
+                        } else {
+                            showMatcherResult();
+                            result.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            restartButton.addEventListener('click', () => {
+                for (let key in answers) {
+                    delete answers[key];
+                }
+                
+                result.classList.remove('active');
+                
+                questions.forEach(q => q.classList.remove('active'));
+                questions[0].classList.add('active');
+                currentQuestion = 0;
+            });
+            
+            function showMatcherResult() {
+                let bestMatch;
+                
+                // Enhanced matching algorithm
+                if (answers.question1 === 'cosmetic' && answers.question2 === 'high') {
+                    bestMatch = dentistsData.find(dentist => dentist.id === 'dreamdentist');
+                } else if (answers.question1 === 'pediatric' || answers.question3 === 'specialist') {
+                    bestMatch = dentistsData.find(dentist => dentist.type.toLowerCase().includes('pediatric')) || 
+                               dentistsData.find(dentist => dentist.id === 'allgrins4kids');
+                } else if (answers.question1 === 'specialty') {
+                    bestMatch = dentistsData.find(dentist => dentist.type.toLowerCase().includes('orthodon')) || 
+                               dentistsData.find(dentist => dentist.type.toLowerCase().includes('oral'));
+                } else if (answers.question2 === 'high') {
+                    // High anxiety - recommend practices with sedation
+                    bestMatch = dentistsData.find(dentist => dentist.sedationOptions.length > 2) || 
+                               dentistsData.find(dentist => dentist.id === 'dreamdentist');
+                } else {
+                    // Default to general family practices
+                    bestMatch = dentistsData.find(dentist => dentist.type.toLowerCase().includes('general')) || 
+                               dentistsData.find(dentist => dentist.id === 'dreamdentist');
+                }
+                
+                if (!bestMatch) {
+                    bestMatch = dentistsData.find(dentist => dentist.id === 'dreamdentist');
+                }
+                
+                // Create result content
+                resultContent.innerHTML = '';
+                
+                const resultCard = document.createElement('div');
+                resultCard.className = 'profile-card';
+                if (bestMatch.isPremium) {
+                    resultCard.classList.add('premium-card');
+                }
+                
+                resultCard.innerHTML = `
+                    <div class="profile-header">
+                        <img src="${bestMatch.logo}" alt="${bestMatch.name} logo" class="profile-logo">
+                        <div class="profile-title">
+                            <h3>${bestMatch.name}${bestMatch.isPremium ? '<span class="premium-badge" style="font-size: 0.7rem; padding: 2px 8px; margin-left: 8px;">Preferred</span>' : ''}</h3>
+                            <div class="profile-type">${bestMatch.type}</div>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <p>Based on your preferences, <strong>${bestMatch.name}</strong> is your ideal dental match!</p>
+                        <div class="profile-info">
+                            <h4>Why this match:</h4>
+                            <ul>
+                                ${bestMatch.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <a href="${bestMatch.website}" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Visit ${bestMatch.name}</a>
+                    </div>
+                `;
+                
+                resultContent.appendChild(resultCard);
+            }
+        }
+
+        // Populate FAQ section
+        function populateFAQSection() {
+            const faqList = document.querySelector('.faq-list');
+            if (!faqList || !faqData) {
+                console.warn('⚠️ FAQ container not found');
+                return;
+            }
+            
+            faqList.innerHTML = '';
+            
+            faqData.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.classList.add('faq-item');
+                
+                const faqQuestion = document.createElement('div');
+                faqQuestion.classList.add('faq-question');
+                
+                const faqQuestionText = document.createElement('h3');
+                faqQuestionText.textContent = faq.question;
+                faqQuestion.appendChild(faqQuestionText);
+                
+                const faqToggle = document.createElement('span');
+                faqToggle.classList.add('faq-toggle');
+                faqToggle.textContent = '+';
+                faqQuestion.appendChild(faqToggle);
+                
+                faqItem.appendChild(faqQuestion);
+                
+                const faqAnswer = document.createElement('div');
+                faqAnswer.classList.add('faq-answer');
+                
+                const faqAnswerContent = document.createElement('p');
+                faqAnswerContent.textContent = faq.answer;
+                faqAnswer.appendChild(faqAnswerContent);
+                
+                faqItem.appendChild(faqAnswer);
+                
+                // Add click event
+                faqQuestion.addEventListener('click', function() {
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    faqItem.classList.toggle('active');
+                });
+                
+                faqList.appendChild(faqItem);
+            });
+            
+            console.log('✅ FAQ section populated with', faqData.length, 'questions');
+        }
+    </script>
 </body>
 </html>
-
