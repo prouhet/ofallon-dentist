@@ -191,3 +191,21 @@ function initializeNavigation() {
 }
 
 console.log("Script.js loaded successfully");
+
+// Auto-initialization backup - ensures functions run on page load
+setTimeout(function() {
+    console.log("Auto-initialization starting...");
+    populateComparisonTable();
+    populateProfilesGrid();
+    if (typeof populateFAQSection === 'function') {
+        populateFAQSection();
+    }
+    console.log("Auto-initialization complete!");
+}, 1000);
+
+// Also try immediate initialization if document is already ready
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    console.log("Document ready, calling functions immediately...");
+    populateComparisonTable();
+    populateProfilesGrid();
+}
