@@ -190,6 +190,66 @@
             gap: 20px;
         }
 
+        /* Matcher Section */
+        .matcher {
+            background-color: var(--light-gray);
+        }
+
+        .matcher-content {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .matcher-question {
+            display: none;
+            padding: 30px;
+        }
+
+        .matcher-question.active {
+            display: block;
+        }
+
+        .matcher-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .matcher-option {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .matcher-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .matcher-result {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .matcher-result.active {
+            display: block;
+        }
+
+        #result-content {
+            margin: 20px 0;
+        }
+
         /* Comparison Section */
         .comparison {
             background-color: white;
@@ -452,66 +512,6 @@
             margin-bottom: 10px;
         }
 
-        /* Matcher Section */
-        .matcher {
-            background-color: var(--light-gray);
-        }
-
-        .matcher-content {
-            max-width: 700px;
-            margin: 40px auto 0;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-        }
-
-        .matcher-question {
-            display: none;
-            padding: 30px;
-        }
-
-        .matcher-question.active {
-            display: block;
-        }
-
-        .matcher-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .matcher-option {
-            padding: 15px;
-            background-color: var(--light-gray);
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .matcher-option:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .matcher-result {
-            display: none;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .matcher-result.active {
-            display: block;
-        }
-
-        #result-content {
-            margin: 20px 0;
-        }
-
         /* FAQ Section */
         .faq {
             background-color: white;
@@ -770,10 +770,10 @@
                 </div>
                 <ul>
                     <li><a href="#hero">Home</a></li>
+                    <li><a href="#matcher">Find Your Match</a></li>
                     <li><a href="#comparison">Quick Compare</a></li>
                     <li><a href="#profiles">Dentist Profiles</a></li>
                     <li><a href="#featured">Featured Dentist</a></li>
-                    <li><a href="#matcher">Find Your Match</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -784,11 +784,100 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
-            <h2>Find Your Perfect Dentist in O'Fallon</h2>
-            <p>Compare all dental practices in the 62269 area to find your ideal dental care match</p>
+            <h2>Complete O'Fallon Dentist Guide - Compare All 17 Practices</h2>
+            <p>See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.</p>
             <div class="hero-buttons">
                 <a href="#comparison" class="btn btn-primary">Compare All Dentists</a>
-                <a href="#featured" class="btn btn-secondary">See Our Top Pick</a>
+                <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Story Section -->
+    <section style="background-color: white; padding: 60px 0;">
+        <div class="container">
+            <h2 style="color: var(--secondary-color); margin-bottom: 30px;">Looking for a Dentist in O'Fallon? You're Not Alone.</h2>
+            <div style="max-width: 800px;">
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    With 17 dental practices spread across O'Fallon, Shiloh, and the surrounding areas, choosing the right dentist can feel overwhelming.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    Maybe you need a practice that accepts your insurance, or you're looking for someone great with kids. Perhaps you're dealing with dental anxiety and need sedation options, or you want modern technology and convenient evening hours. You might be tired of the "drill and bill" approach and want a dentist who actually listens to your concerns.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 600;">
+                    That's exactly why we created this complete comparison guide. We've researched every practice, gathered real pricing information, and organized everything so you can find your perfect dental match without the runaround.
+                </p>
+                
+                <!-- Stats Section -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; text-align: center;">
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">17</h3>
+                        <p style="font-weight: 600; margin: 0;">Practices Compared</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">5min</h3>
+                        <p style="font-weight: 600; margin: 0;">To Find Your Match</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">100%</h3>
+                        <p style="font-weight: 600; margin: 0;">Local & Unbiased</p>
+                    </div>
+                </div>
+
+                <!-- Why Compare Section -->
+                <div style="background-color: var(--light-gray); padding: 30px; border-radius: var(--border-radius); margin-top: 40px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Why Compare Before You Commit?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px;">
+                        Dental care costs in O'Fallon vary dramatically - from $150 routine cleanings to premium practices charging $300+. But advertised prices rarely tell the whole story. Insurance acceptance, sedation options, and evening availability can turn a "great deal" into a frustrating experience.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; font-weight: 600;">
+                        Our side-by-side comparison shows you exactly what to expect at each location, helping you make an informed decision that saves both time and money.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matcher Section -->
+    <section id="matcher" class="matcher">
+        <div class="container">
+            <h2>Find Your Dental Match</h2>
+            <p>Answer a few questions about your dental needs and preferences to find the perfect practice for you.</p>
+            
+            <div class="matcher-content">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What type of dental care do you need most?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="general">General/Family Dentistry</button>
+                        <button class="matcher-option" data-value="cosmetic">Cosmetic Dentistry</button>
+                        <button class="matcher-option" data-value="pediatric">Pediatric/Children's Care</button>
+                        <button class="matcher-option" data-value="specialty">Specialty Services (Orthodontics, Oral Surgery)</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-2">
+                    <h3>How would you describe your dental anxiety level?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="low">Low - I'm comfortable with dental visits</button>
+                        <button class="matcher-option" data-value="moderate">Moderate - Some nervousness but manageable</button>
+                        <button class="matcher-option" data-value="high">High - I need sedation or special comfort measures</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-3">
+                    <h3>Do you have children who need dental care?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="specialist">Yes, I want a pediatric specialist</button>
+                        <button class="matcher-option" data-value="family">Yes, but family practice is fine</button>
+                        <button class="matcher-option" data-value="adult">No, adult-only care</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Ideal Dental Practice Match</h3>
+                    <div id="result-content"></div>
+                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
+                </div>
             </div>
         </div>
     </section>
@@ -909,50 +998,6 @@
         </div>
     </section>
 
-    <!-- Matcher Section -->
-    <section id="matcher" class="matcher">
-        <div class="container">
-            <h2>Find Your Dental Match</h2>
-            <p>Answer a few questions about your dental needs and preferences to find the perfect practice for you.</p>
-            
-            <div class="matcher-content">
-                <div class="matcher-question active" id="question-1">
-                    <h3>What type of dental care do you need most?</h3>
-                    <div class="matcher-options">
-                        <button class="matcher-option" data-value="general">General/Family Dentistry</button>
-                        <button class="matcher-option" data-value="cosmetic">Cosmetic Dentistry</button>
-                        <button class="matcher-option" data-value="pediatric">Pediatric/Children's Care</button>
-                        <button class="matcher-option" data-value="specialty">Specialty Services (Orthodontics, Oral Surgery)</button>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-2">
-                    <h3>How would you describe your dental anxiety level?</h3>
-                    <div class="matcher-options">
-                        <button class="matcher-option" data-value="low">Low - I'm comfortable with dental visits</button>
-                        <button class="matcher-option" data-value="moderate">Moderate - Some nervousness but manageable</button>
-                        <button class="matcher-option" data-value="high">High - I need sedation or special comfort measures</button>
-                    </div>
-                </div>
-                
-                <div class="matcher-question" id="question-3">
-                    <h3>Do you have children who need dental care?</h3>
-                    <div class="matcher-options">
-                        <button class="matcher-option" data-value="specialist">Yes, I want a pediatric specialist</button>
-                        <button class="matcher-option" data-value="family">Yes, but family practice is fine</button>
-                        <button class="matcher-option" data-value="adult">No, adult-only care</button>
-                    </div>
-                </div>
-                
-                <div class="matcher-result" id="matcher-result">
-                    <h3>Your Ideal Dental Practice Match</h3>
-                    <div id="result-content"></div>
-                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
@@ -1007,6 +1052,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#hero">Home</a></li>
+                        <li><a href="#matcher">Find Your Match</a></li>
                         <li><a href="#comparison">Comparison Chart</a></li>
                         <li><a href="#profiles">Dentist Profiles</a></li>
                         <li><a href="#featured">Featured Practice</a></li>
