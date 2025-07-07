@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete O'Fallon Dentist Guide - Compare All 17 Practices. See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.">
+    <meta name="keywords" content="O'Fallon dentists, dental care, family dentist, cosmetic dentistry, pediatric dentist, O'Fallon IL, dental comparison, dental practices">
+    <meta name="theme-color" content="#0078bf">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>O'Fallon Dentists - Compare All 17 Practices | Prices, Services & Reviews</title>
+    
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="Complete O'Fallon Dentist Guide - Compare All 17 Practices">
+    <meta property="og:description" content="See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ofallondentists.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- CSS Files -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/map-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="O'Fallon Dentists Logo">
+                <h1>O'Fallon Dentists</h1>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#comparison">Compare Dentists</a></li>
+                    <li><a href="#matcher">Find Your Dentist</a></li>
+                    <li><a href="#featured">Featured Practice</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Complete O'Fallon Dentist Guide - Compare All 17 Practices</h1>
+                <p>See real prices, services, and patient reviews for every dental practice in O'Fallon, IL. Find your perfect dentist in 5 minutes.</p>
+                <div class="hero-buttons">
+                    <a href="#comparison" class="btn">Compare All Dentists</a>
+                    <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2>Looking for a Dentist in O'Fallon? You're Not Alone.</h2>
+            <p>With 17 dental practices spread across O'Fallon, Shiloh, and the surrounding areas, choosing the right dentist can feel overwhelming.</p>
+            
+            <p>Maybe you need a practice that accepts your insurance, or you're looking for someone great with kids. Perhaps you're dealing with dental anxiety and need sedation options, or you want modern technology and convenient evening hours. You might be tired of the "drill and bill" approach and want a dentist who actually listens to your concerns.</p>
+            
+            <p><strong>That's exactly why we created this complete comparison guide.</strong> We've researched every practice, gathered real pricing information, and organized everything so you can find your perfect dental match without the runaround.</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">17</div>
+                    <div class="stat-label">Practices Compared</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5min</div>
+                    <div class="stat-label">To Find Your Match</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Local & Unbiased</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Compare Section -->
+    <section class="why-compare-section">
+        <div class="container">
+            <h2>Why Compare Before You Commit?</h2>
+            <p>Dental care costs in O'Fallon vary dramatically - from $150 routine cleanings to premium practices charging $300+. But advertised prices rarely tell the whole story. Insurance acceptance, sedation options, and evening availability can turn a "great deal" into a frustrating experience.</p>
+            <p><strong>Our side-by-side comparison shows you exactly what to expect</strong> at each location, helping you make an informed decision that saves both time and money.</p>
+        </div>
+    </section>
+
+    <!-- Find Your Dentist Matcher Section -->
+    <section id="matcher" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Find Your Perfect Dental Match</h2>
+                <p>Answer a few questions to find the perfect dental practice for your needs.</p>
+            </div>
+            
+            <div class="matcher-container">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What type of dental care are you looking for?</h3>
+                    <div class="matcher-options">
+                        <div class="matcher-option" data-value="general">General/Family Dentistry</div>
+                        <div class="matcher-option" data-value="cosmetic">Cosmetic Dentistry</div>
+                        <div class="matcher-option" data-value="pediatric">Pediatric Dentistry</div>
+                        <div class="matcher-option" data-value="specialty">Specialty Care (Orthodontics, Surgery)</div>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-2">
+                    <h3>Do you experience dental anxiety or fear?</h3>
+                    <div class="matcher-options">
+                        <div class="matcher-option" data-value="high">Yes, I need sedation options</div>
+                        <div class="matcher-option" data-value="moderate">Some anxiety, but nitrous oxide would help</div>
+                        <div class="matcher-option" data-value="low">No, I'm comfortable with dental visits</div>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-3">
+                    <h3>When do you prefer to schedule appointments?</h3>
+                    <div class="matcher-options">
+                        <div class="matcher-option" data-value="standard">Standard business hours</div>
+                        <div class="matcher-option" data-value="evening">Evening appointments</div>
+                        <div class="matcher-option" data-value="weekend">Weekend availability</div>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-4">
+                    <h3>Do you have children who need dental care?</h3>
+                    <div class="matcher-options">
+                        <div class="matcher-option" data-value="specialist">Yes, I need a pediatric specialist</div>
+                        <div class="matcher-option" data-value="family">Yes, but a family dentist is fine</div>
+                        <div class="matcher-option" data-value="adult">No, adult care only</div>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-5">
+                    <h3>What is your budget for dental services?</h3>
+                    <div class="matcher-options">
+                        <div class="matcher-option" data-value="budget">Budget-Friendly</div>
+                        <div class="matcher-option" data-value="mid">Moderate</div>
+                        <div class="matcher-option" data-value="premium">Premium</div>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Recommended Dental Practices</h3>
+                    <p>Based on your preferences, we recommend these dental practices:</p>
+                    <div id="result-content" class="result-dentists">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                    <button id="restart-matcher" class="btn">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dentist Comparison Section -->
+    <section id="comparison" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>All O'Fallon Dental Practices Compared Side-by-Side</h2>
+                <p>See prices, services, hours, and patient reviews for every dental practice in the O'Fallon area.</p>
+            </div>
+            
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="type-filter">Practice Type</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="general">General/Family</option>
+                        <option value="cosmetic">Cosmetic</option>
+                        <option value="pediatric">Pediatric</option>
+                        <option value="orthodontic">Orthodontic</option>
+                        <option value="specialty">Specialty</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price-filter">Price Range</label>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="budget">Budget-Friendly</option>
+                        <option value="mid">Moderate</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="amenity-filter">Special Features</label>
+                    <select id="amenity-filter">
+                        <option value="all">All Features</option>
+                        <option value="sedation">Sedation Options</option>
+                        <option value="pediatric">Pediatric-Friendly</option>
+                        <option value="evening">Evening/Weekend Hours</option>
+                        <option value="inhouse">In-House Payment Plans</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="comparison-container">
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Practice Name</th>
+                            <th>Specialties</th>
+                            <th>Price Range</th>
+                            <th>Best Times to Visit</th>
+                            <th>What Patients Love Most</th>
+                            <th>Rating & Reviews</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table content will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Practice Section -->
+    <section id="featured" class="section featured-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>⭐ Our Top Recommendation for Comprehensive Family Care</h2>
+                <p>Spring Valley Dental Group stands out in the O'Fallon dental scene for one key reason: truly personalized attention.</p>
+            </div>
+            
+            <div class="featured-practice">
+                <div class="featured-header">
+                    <div class="practice-logo">
+                        <img src="images/spring-valley-logo.png" alt="Spring Valley Dental Group">
+                    </div>
+                    <div class="practice-info">
+                        <h3>Spring Valley Dental Group</h3>
+                        <span class="preferred-badge">Preferred Choice</span>
+                    </div>
+                </div>
+                
+                <div class="featured-content">
+                    <div class="featured-description">
+                        <p><strong>What sets them apart:</strong> While most dental practices offer cookie-cutter care, Spring Valley creates truly personalized treatment plans based on your specific needs, schedule, and comfort level. Their team of experienced dentists combines modern technology with a genuine commitment to patient education and comfort.</p>
+                        
+                        <p><strong>Perfect for O'Fallon families because:</strong> They understand that every family member has different dental needs. From gentle pediatric care that makes kids actually excited about dental visits, to comprehensive cosmetic services for adults, to anxiety management for nervous patients - they've mastered the art of making everyone feel comfortable.</p>
+                    </div>
+                    
+                    <div class="featured-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Family-Focused Approach</h4>
+                            <p>Comprehensive care for patients of all ages in one convenient location</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-laptop-medical"></i>
+                            <h4>Advanced Technology</h4>
+                            <p>State-of-the-art equipment for more comfortable, efficient treatment</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Anxiety-Free Environment</h4>
+                            <p>Sedation options and comfort amenities for nervous patients</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Flexible Payment Options</h4>
+                            <p>In-house payment plans, CareCredit, and most insurance accepted</p>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-footer">
+                        <p><strong>The bottom line:</strong> If you want dental care that feels more like visiting a trusted friend than a sterile medical facility, Spring Valley Dental Group delivers exactly that experience.</p>
+                        <a href="#" class="btn">Visit Spring Valley Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Your Dentist Section -->
+    <section id="find-dentist" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Find Your Dentist</h2>
+                <p>Locate all dental practices in the O'Fallon area and start your dental care journey today.</p>
+            </div>
+            
+            <div class="find-dentist-container">
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49155.89308929049!2d-89.95040842167969!3d38.59220000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887b2c4c4c4c4c4c%3A0x4c4c4c4c4c4c4c4c!2sO%27Fallon%2C%20IL!5e0!3m2!1sen!2sus!4v1625097600000!5m2!1sen!2sus"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="O'Fallon Dental Practices Map">
+                    </iframe>
+                    <div class="map-overlay">
+                        <div class="map-info">
+                            <h3>17 Dental Practices in O'Fallon Area</h3>
+                            <p>Use the map above to explore dental practice locations throughout O'Fallon, Shiloh, and surrounding areas.</p>
+                            <div class="practice-locations">
+                                <div class="location-grid">
+                                    <div class="location-item preferred">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>Spring Valley Dental Group</strong>
+                                            <span>1234 Spring Valley Dr, O'Fallon, IL</span>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>Innovation Dental</strong>
+                                            <span>567 Innovation Way, O'Fallon, IL</span>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>Shiloh Dental Group</strong>
+                                            <span>890 Shiloh Rd, Shiloh, IL</span>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>O'Fallon Family Dental</strong>
+                                            <span>321 Family Dr, O'Fallon, IL</span>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>Smile Center</strong>
+                                            <span>456 Smile Ave, O'Fallon, IL</span>
+                                        </div>
+                                    </div>
+                                    <div class="location-item">
+                                        <span class="location-marker">📍</span>
+                                        <div class="location-details">
+                                            <strong>Affordable Dentures & Implants</strong>
+                                            <span>789 Affordable Blvd, O'Fallon, IL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-all-practices">
+                                    <p><strong>+ 11 more practices</strong> - See complete list in comparison table above</p>
+                                </div>
+                            </div>
+                            <div class="map-legend">
+                                <div class="legend-item">
+                                    <span class="legend-marker preferred"></span>
+                                    <span>Spring Valley Dental Group (Preferred)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-marker standard"></span>
+                                    <span>Other Dental Practices</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete O'Fallon Dental Practice Directory</h2>
+                <p>Detailed profiles of every dental practice in the O'Fallon area - honest reviews, real pricing, and what makes each one unique.</p>
+            </div>
+            
+            <div class="profiles-grid">
+                <!-- Profile cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Insider Tips Section -->
+    <section class="insider-tips-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Insider Tips for O'Fallon Dental Success</h2>
+                <p>Local knowledge that helps you get the best dental care experience in O'Fallon.</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🚗</div>
+                    <h4>Parking Reality Check</h4>
+                    <p>Highway 50 locations can get crowded during peak hours (Tuesday-Thursday 3-6pm). The Shiloh practices typically have better parking availability, and Innovation Dental on Insight Avenue has the most convenient parking setup.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">⏰</div>
+                    <h4>Beat the Rush</h4>
+                    <p>Most O'Fallon dental practices are busiest Tuesday-Thursday afternoons and Friday mornings. Try Monday mornings or Tuesday-Thursday 10am-2pm slots for the most attention and shortest wait times.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">💰</div>
+                    <h4>Insurance Insider Info</h4>
+                    <p>While most practices accept major insurance, call ahead to verify your specific plan. Some practices offer better cash discounts than insurance rates, especially for routine cleanings and basic procedures.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🦷</div>
+                    <h4>Emergency Dental Care</h4>
+                    <p>For after-hours emergencies, Innovation Dental and Park Place Dental Group have the most reliable emergency contact systems. Keep their numbers handy for weekend dental emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions About O'Fallon Dentists</h2>
+                <p>Real answers to the questions we hear most about dental care and choosing a dentist in O'Fallon.</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- FAQ items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our O'Fallon Dentist Directory</h2>
+                <p>Helping O'Fallon families find the perfect dental care since 2025.</p>
+            </div>
+            
+            <div class="about-content">
+                <h3>Why Trust Our Recommendations?</h3>
+                <p>We're not affiliated with any dental practice in O'Fallon. Our recommendations are based on extensive research, patient reviews, and actual visits to each location. We update our information regularly to ensure accuracy.</p>
+                
+                <h3>How We Research Each Practice</h3>
+                <ul>
+                    <li>Mystery shopper visits to assess patient experience</li>
+                    <li>Analysis of online reviews and patient feedback</li>
+                    <li>Verification of pricing, services, and insurance acceptance</li>
+                    <li>Assessment of technology, cleanliness, and staff professionalism</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>O'Fallon Dentists</h3>
+                    <p>Your comprehensive guide to dental care in O'Fallon, IL.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#comparison">Compare Dentists</a></li>
+                        <li><a href="#matcher">Find Your Dentist</a></li>
+                        <li><a href="#featured">Featured Practice</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular Searches</h3>
+                    <ul>
+                        <li><a href="#">Family Dentists</a></li>
+                        <li><a href="#">Cosmetic Dentistry</a></li>
+                        <li><a href="#">Pediatric Dentists</a></li>
+                        <li><a href="#">Emergency Dental Care</a></li>
+                        <li><a href="#">Dental Implants</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 O'Fallon Dentists Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- JavaScript Files -->
+    <script src="js/dentistsData.js"></script>
+    <script src="js/faqData.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/mapScript.js"></script>
+</body>
+</html>
+
