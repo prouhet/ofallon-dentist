@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap locations (add multiple if you have them)
+# Sitemap locations (add additional sitemaps as you create them)
 Sitemap: https://ofallondentists.com/sitemap.xml
-Sitemap: https://ofallondentists.com/sitemap-images.xml
 
 # Major search engines - prioritize crawling
 User-agent: Googlebot
@@ -81,29 +80,7 @@ Allow: /
 User-agent: ia_archiver
 Allow: /
 
-# Control aggressive SEO crawlers (allow but with delay)
-User-agent: AhrefsBot
-Allow: /
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Allow: /
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Allow: /
-Crawl-delay: 10
-
-User-agent: DotBot
-Crawl-delay: 10
-
-User-agent: SiteAuditBot
-Crawl-delay: 10
-
-# Block problematic or spam bots
-User-agent: SentiBot
-Disallow: /
-
+# Block aggressive SEO crawlers to reduce server load
 User-agent: AhrefsBot
 Disallow: /
 
@@ -125,10 +102,22 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-# Block unwanted content scraping
+User-agent: SentiBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: LinkpadBot
+Disallow: /
+
+# Block unwanted content scraping and private areas
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
 Disallow: /*?print=
 Disallow: /*&print=
+Disallow: /*?debug=
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
