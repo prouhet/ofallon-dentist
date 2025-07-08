@@ -1076,7 +1076,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Complete Dentists Data with correct logo paths
+        // Complete Dentists Data with all 22 practices and updated ratings/reviews from Google Maps
         const dentistsData = [
           {
             id: "parkplacedental",
@@ -1108,7 +1108,7 @@
           {
             id: "dreamdentist",
             name: "Dream Dentist",
-            type: "Cosmetic & Sedation",
+            type: "General & Cosmetic",
             specialties: ["Cosmetic Dentistry", "Sedation Dentistry", "General Care"],
             rating: 4.8,
             reviews: 261,
@@ -1161,29 +1161,56 @@
           },
           {
             id: "medder-mark",
-            name: "MEDDER MARK L DMD",
+            name: "Mark Medder DMD",
             type: "General & Family",
-            specialties: ["Family Dentistry", "General Dentistry", "Preventive Care"],
+            specialties: ["General Dentistry", "Cosmetic Dentistry", "Preventative Dentistry"],
             rating: 4.8,
             reviews: 20,
-            website: "#",
+            website: "https://markmedderdmd.com/",
             logo: "images/logos/markmedder.webp",
             address: "1403 S Lincoln Ave, O'Fallon, IL 62269",
-            phone: "Contact for information",
+            phone: "(618) 624-8532",
             isPremium: false,
             sedationOptions: [],
             specialServices: ["Emergency Care", "Payment Plans"],
             features: [
-              "Family dental practice",
-              "General dentistry services",
-              "Preventive care focus",
-              "Professional service"
+              "Family-owned and operated",
+              "Over 20 years in community",
+              "United Concordia & Delta Provider",
+              "Flexible scheduling with evening & Saturday appointments"
             ],
             amenities: [
-              "Convenient location",
-              "Family-friendly practice",
-              "Professional care",
-              "Flexible scheduling"
+              "Monday: 10 AM - 3 PM",
+              "Tuesday-Friday: 9 AM - 3 PM (Wed until 11 AM)",
+              "Saturday by appointment",
+              "Accept most insurances"
+            ]
+          },
+          {
+            id: "cambridgedental",
+            name: "Cambridge Dental Care",
+            type: "General & Cosmetic",
+            specialties: ["General Dentistry", "Cosmetic Dentistry", "Periodontics"],
+            rating: 4.9,
+            reviews: 943,
+            website: "https://cambridgefamilydentistry.com/",
+            logo: "images/logos/cambridge.webp",
+            address: "1490 North Greenmount Road, Suite B, O'Fallon, IL 62269",
+            phone: "(618) 632-1603",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Emergency Care", "Payment Plans"],
+            features: [
+              "Periodontal specialists",
+              "Comprehensive care",
+              "Advanced procedures",
+              "High patient satisfaction"
+            ],
+            amenities: [
+              "LAPT therapy",
+              "Bone grafting",
+              "Emergency services",
+              "Payment options"
             ]
           },
           {
@@ -1297,7 +1324,7 @@
           {
             id: "aspendental",
             name: "Aspen Dental",
-            type: "General & Corporate",
+            type: "General & Family",
             specialties: ["General Dentistry", "Dentures", "Emergency Care"],
             rating: 4.2,
             reviews: 669,
@@ -1319,6 +1346,33 @@
               "Multiple locations",
               "Financing available",
               "Emergency services"
+            ]
+          },
+          {
+            id: "shilohdentalgroup",
+            name: "Shiloh Dental Group",
+            type: "General & Family",
+            specialties: ["Preventative Care", "Cosmetic Dentistry", "Oral Surgery"],
+            rating: 4.8,
+            reviews: 18,
+            website: "http://www.shilohdentalgroup.com/",
+            logo: "images/logos/shilohdental.png",
+            address: "301 Tamarack Lane, Shiloh, IL 62269",
+            phone: "(618) 632-5566",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Payment Plans"],
+            features: [
+              "Lifetime preventative care",
+              "Family-oriented practice",
+              "Comprehensive services",
+              "Treat patients like family"
+            ],
+            amenities: [
+              "Dental implants",
+              "Endodontics",
+              "Oral surgery",
+              "Preventive focus"
             ]
           },
           {
@@ -1454,6 +1508,168 @@
               "Invisalign certified",
               "Payment plan options",
               "Free consultation"
+            ]
+          },
+          {
+            id: "azarorthodontics",
+            name: "Azar Orthodontics",
+            type: "Orthodontist",
+            specialties: ["Orthodontics", "Braces", "Invisalign"],
+            rating: 4.8,
+            reviews: "A+ BBB Rating",
+            website: "https://azarorthodontics.com/",
+            logo: "images/logos/azar.png",
+            address: "O'Fallon, IL 62269",
+            phone: "Contact via website",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Payment Plans"],
+            features: [
+              "Orthodontic specialists",
+              "Braces and aligners",
+              "A+ BBB rating",
+              "Modern technology"
+            ],
+            amenities: [
+              "Advanced orthodontics",
+              "Digital planning",
+              "Consultation available",
+              "Flexible payments"
+            ]
+          },
+          {
+            id: "olson-orthodontics",
+            name: "Olson Orthodontics",
+            type: "Orthodontist",
+            specialties: ["Orthodontics", "Braces", "Invisalign"],
+            rating: 5.0,
+            reviews: 170,
+            website: "#",
+            logo: "images/logos/olson.png",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: [],
+            specialServices: ["Invisalign", "Payment Plans"],
+            features: [
+              "Orthodontic specialists",
+              "Advanced techniques",
+              "Invisalign certified",
+              "Digital technology"
+            ],
+            amenities: [
+              "Modern orthodontic care",
+              "Digital imaging",
+              "Flexible appointments",
+              "Progress tracking"
+            ]
+          },
+          {
+            id: "allgrins4kids",
+            name: "All Grins 4 Kids",
+            type: "Pediatric Specialist",
+            specialties: ["Pediatric Dentistry", "Special Needs Care", "Child-Friendly"],
+            rating: 4.8,
+            reviews: "Contact for info",
+            website: "https://www.allgrins4kids.com/",
+            logo: "images/logos/allgrins4kids.svg",
+            address: "317 Tamarack Lane, Shiloh, IL 62269",
+            phone: "(618) 628-4400",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Pediatric specialists",
+              "Child-friendly environment",
+              "Special needs care",
+              "Fun atmosphere"
+            ],
+            amenities: [
+              "Kid-focused design",
+              "Nitrous oxide available",
+              "Digital X-rays",
+              "Refer a Friend program"
+            ]
+          },
+          {
+            id: "associated-pediatric",
+            name: "Associated Pediatric Dentistry",
+            type: "Pediatric Specialist",
+            specialties: ["Pediatric Dentistry", "Special Needs Care", "General Anesthesia"],
+            rating: 4.9,
+            reviews: 314,
+            website: "#",
+            logo: "images/logos/associatedpediatric.png",
+            address: "O'Fallon area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "General Anesthesia"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Pediatric specialists",
+              "Special needs expertise",
+              "General anesthesia available",
+              "Child-focused environment"
+            ],
+            amenities: [
+              "Kid-friendly atmosphere",
+              "Specialized equipment",
+              "Behavior management",
+              "Parent education"
+            ]
+          },
+          {
+            id: "midamerica-oral",
+            name: "Mid America Oral Surgery & Implant Center",
+            type: "Oral Surgeon",
+            specialties: ["Oral Surgery", "Extractions", "Implants"],
+            rating: 4.7,
+            reviews: 555,
+            website: "#",
+            logo: "images/logos/midamericaoms.png",
+            address: "624 Pierce Blvd #200, O'Fallon, IL 62269",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Oral surgery specialists",
+              "Multiple sedation options",
+              "Advanced procedures",
+              "Emergency services"
+            ],
+            amenities: [
+              "Surgical expertise",
+              "Full sedation options",
+              "Emergency availability",
+              "Modern facility"
+            ]
+          },
+          {
+            id: "oralsurgeons-so-il",
+            name: "Oral Surgeons of Southern Illinois",
+            type: "Oral Surgeon",
+            specialties: ["Oral Surgery", "Maxillofacial Surgery", "Implants"],
+            rating: 5.0,
+            reviews: "Contact for info",
+            website: "#",
+            logo: "images/logos/ossi.png",
+            address: "Southern Illinois area",
+            phone: "Contact for information",
+            isPremium: false,
+            sedationOptions: ["Nitrous Oxide", "Oral Sedation", "IV Sedation"],
+            specialServices: ["Emergency Care", "Payment Plans"],
+            features: [
+              "Maxillofacial surgery",
+              "Comprehensive sedation",
+              "Surgical expertise",
+              "Emergency care"
+            ],
+            amenities: [
+              "Advanced surgical techniques",
+              "Complete sedation options",
+              "Specialist care",
+              "Emergency services"
             ]
           }
         ];
