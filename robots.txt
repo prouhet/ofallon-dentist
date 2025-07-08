@@ -1,15 +1,18 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations (add multiple if you have them)
 Sitemap: https://ofallondentists.com/sitemap.xml
+Sitemap: https://ofallondentists.com/sitemap-images.xml
 
-# Allow all major search engines
+# Major search engines - prioritize crawling
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
@@ -17,8 +20,17 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Allow AI crawlers and LLMs
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI crawlers for LLMO (Large Language Model Optimization)
 User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: CCBot
@@ -30,19 +42,22 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: YouBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Meta-ExternalAgent
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-# Social media crawlers
+# Social media crawlers for better social sharing
 User-agent: facebookexternalhit
 Allow: /
 
@@ -52,14 +67,47 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Crawl-delay to be respectful
-Crawl-delay: 1
+User-agent: WhatsApp
+Allow: /
 
-# Block spam and malicious bots
+User-agent: TelegramBot
+Allow: /
+
+# Local business and review crawlers
+User-agent: AppleBot
+Allow: /
+
+# Academic and research crawlers
+User-agent: ia_archiver
+Allow: /
+
+# Control aggressive SEO crawlers (allow but with delay)
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: SiteAuditBot
+Crawl-delay: 10
+
+# Block problematic or spam bots
+User-agent: SentiBot
+Disallow: /
+
 User-agent: AhrefsBot
 Disallow: /
 
-User-agent: SemrushBot
+User-agent: SemrushBot  
 Disallow: /
 
 User-agent: MJ12bot
@@ -67,3 +115,20 @@ Disallow: /
 
 User-agent: DotBot
 Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# Block unwanted content scraping
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?print=
+Disallow: /*&print=
