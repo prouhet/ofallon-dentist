@@ -299,16 +299,17 @@
             border-bottom: 1px solid var(--light-gray);
         }
 
-        th {
-            background-color: var(--secondary-color);
-            color: white;
-            position: sticky;
-            top: 80px;
-            z-index: 100;
-            white-space: nowrap;
-            font-size: 0.9rem;
-        }
-
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    position: sticky;
+    top: 0px;  /* Changed from 80px to 0px */
+    z-index: 100;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+}
+       
         tbody tr {
             transition: var(--transition);
         }
